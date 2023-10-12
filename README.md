@@ -1,6 +1,6 @@
-# ShipFast — Typescript
+# Points Party
 
-Hey maker 👋 it's Marc from [ShipFast](https://shipfa.st/docs). Let's get your startup off the ground, FAST ⚡️
+Hey 👋 it's Evan from [Points Party](https://wwww.pointsparty.io). Let's get your startup off the ground, FAST ⚡️
 
 <sub>**Watch/Star the repo to be notified when updates are pushed**</sub>
 
@@ -27,3 +27,5 @@ Reach out to me on [Twitter](https://twitter.com/marc_louvion) or marc@shipfa.st
 Let's ship it, FAST ⚡️
 
 P.S. Want to showcase your startups? Get your [Indie Page](https://indiepa.ge?ref=shipfast_readme) and share your entrepreneurial journey. Join 2,732 founders ⭐️
+
+Forked from [ShipFast](https://shipfa.st/docs)
