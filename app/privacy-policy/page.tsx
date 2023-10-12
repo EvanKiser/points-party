@@ -57,51 +57,35 @@ const PrivacyPolicy = () => {
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: 2023-08-25
+          {`Last Updated: October 10, 2023
 
-Thank you for visiting ShipFast ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect your personal and non-personal information when you use our website located at https://shipfa.st (the "Website").
+Introduction
+Welcome to Points Party. This Privacy Policy outlines the types of information we collect from you, how we use that information, and the steps we take to ensure your privacy when you use our service available at https://pointsparty.io.
 
-By accessing or using the Website, you agree to the terms of this Privacy Policy. If you do not agree with the practices described in this policy, please do not use the Website.
+Information We Collect
+We collect the following types of information:
 
-1. Information We Collect
+Personal Information: This includes your name, email address, and payment information.
 
-1.1 Personal Data
+Non-Personal Information: We use cookies to collect data related to your activity on our website.
 
-We collect the following personal information from you:
+Purpose of Data Collection
+We collect your data for the following purposes:
 
-Name: We collect your name to personalize your experience and communicate with you effectively.
-Email: We collect your email address to send you important information regarding your orders, updates, and communication.
-Payment Information: We collect payment details to process your orders securely. However, we do not store your payment information on our servers. Payments are processed by trusted third-party payment processors.
+Order Processing: To process your orders and provide you with the services you request.
+Data Sharing
+We do not share your personal or non-personal information with any third parties.
 
-1.2 Non-Personal Data
+Children's Privacy
+We do not knowingly collect or solicit information from children under the age of 13.
 
-We may use web cookies and similar technologies to collect non-personal information such as your IP address, browser type, device information, and browsing patterns. This information helps us to enhance your browsing experience, analyze trends, and improve our services.
+Updates to This Privacy Policy
+We may update this Privacy Policy from time to time. Any changes will be posted on this page, and if the changes are significant, we will notify you by email.
 
-2. Purpose of Data Collection
+Contact Us
+If you have any questions or concerns about this Privacy Policy, please contact us at evan@mail.pointsparty.io.
 
-We collect and use your personal data for the sole purpose of order processing. This includes processing your orders, sending order confirmations, providing customer support, and keeping you updated about the status of your orders.
-
-3. Data Sharing
-
-We do not share your personal data with any third parties except as required for order processing (e.g., sharing your information with payment processors). We do not sell, trade, or rent your personal information to others.
-
-4. Children's Privacy
-
-ShipFast is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at the email address provided below.
-
-5. Updates to the Privacy Policy
-
-We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be posted on this page, and we may notify you via email about significant changes.
-
-6. Contact Information
-
-If you have any questions, concerns, or requests related to this Privacy Policy, you can contact us at:
-
-Email: marc@shipfa.st
-
-For all other inquiries, please visit our Contact Us page on the Website.
-
-By using ShipFast, you consent to the terms of this Privacy Policy.`}
+By using Points Party, you consent to the terms of this Privacy Policy.`}
         </pre>
       </div>
     </main>
