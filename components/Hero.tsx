@@ -22,14 +22,14 @@ const Hero = () => {
         </a>
 
         <h1 className="font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4">
-          Ship your startup in days, not weeks
+          Save up to 40-90% off award travel from your city
         </h1>
         <p className="text-lg opacity-80 leading-relaxed">
-          The NextJS boilerplate with all you need to build your SaaS, AI tool,
-          or any other web app. From idea to production in 5 minutes.
+          No more wasting time searching for the best deals to redeem your credit card points.
+          Let Points Party notify you of the best deals and save up to 40-90% off award travel from your city
         </p>
         <button className="btn btn-primary btn-wide">
-          Get {config.appName}
+          Try {config.appName} For Free
         </button>
 
         <TestimonialsAvatars priority={true} />
