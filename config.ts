@@ -6,7 +6,7 @@ const config = {
   appName: "Points Party",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+    "Get notified of unbeatable award travel deals, instantly delivering personalized flight savings, and a lifetime of adventures with miles and points.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "PointsParty.io",
   crisp: {
@@ -20,23 +20,22 @@ const config = {
     plans: [
       {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
-        priceId:
-          process.env.NODE_ENV === "development"
-            ? "price_1NzuLzBHo1ckSRgy4yH3j3L1"
-            : "price_1NzuLzBHo1ckSRgy4yH3j3L1",
+        priceId: process.env.NODE_ENV === "development" ? "price_1NzuLzBHo1ckSRgy4yH3j3L1" : "price_1NzuLzBHo1ckSRgy4yH3j3L1",
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "Premium",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for small projects",
+        description: "One Year of Access",
         // The price you want to display, the one user will be charged on Stripe.
         price: 50,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 75,
+        priceAnchor: 100,
+        bottomText: "Yearly Subscription",
         features: [
-          { name: "NextJS boilerplate" },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
+          { name: "Deals on economy, business, & first class flights" },
+          { name: "International & domestic" },
+          { name: "Unlimited notifications" },
+          { name: "A front row seat as I grow this business and community"},
+          { name: "24/7 support" },
         ],
       },
       {
@@ -50,13 +49,13 @@ const config = {
         description: "Only the Best Forever",
         price: 100,
         priceAnchor: 199,
+        bottomText: "Pay once. Access forever.",
         features: [
-          { name: "NextJS boilerplate" },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-          { name: "1 year of updates" },
-          { name: "24/7 support" },
+          { name: "Deals on economy, business, & first class flights" },
+          { name: "International & domestic" },
+          { name: "Unlimited notifications" },
+          { name: "A front row seat as I grow this business and community"},
+          { name: "24/7 Support (My personal phone number)" },
         ],
       },
     ],

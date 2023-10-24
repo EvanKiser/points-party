@@ -38,6 +38,7 @@ export interface ConfigProps {
       description?: string;
       price: number;
       priceAnchor?: number;
+      bottomText?: string;
       features: {
         name: string;
       }[];
