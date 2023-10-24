@@ -4,6 +4,7 @@
 // import FAQ from "@/components/FAQ";
 // import CTA from "@/components/CTA";
 // import Footer from "@/components/Footer";
+// import HowItWorks from "@/components/HowItWorks";
 
 // export default function Home() {
 //   return (

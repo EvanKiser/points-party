@@ -57,9 +57,9 @@ const Footer = () => {
                 <Link href="/#pricing" className="link link-hover">
                   Pricing
                 </Link>
-                <a href="/#" target="_blank" className="link link-hover">
+                {/* <a href="/#" target="_blank" className="link link-hover">
                   Affiliates
-                </a>
+                </a> */}
               </div>
             </div>
 
