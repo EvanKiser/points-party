@@ -47,8 +47,8 @@ const config = {
         isFeatured: true,
         name: "Lifetime",
         description: "Only the Best Forever",
-        price: 100,
-        priceAnchor: 199,
+        price: 150,
+        priceAnchor: 300,
         bottomText: "Pay once. Access forever.",
         features: [
           { name: "Deals on economy, business, & first class flights" },

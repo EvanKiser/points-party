@@ -13,8 +13,17 @@ interface FAQItemProps {
 
 const faqList: FAQItemProps[] = [
   {
-    question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
+    question: "How often will I receive deal alerts?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        The frequency of deal alerts depends on factors like your selected preferences and the availability of deals. 
+        We strive to send you alerts when we find significant savings that match your criteria, but we won&apos;t flood your inbox with excessive notifications.      
+      </div>
+    ),
+  },
+  {
+    question: "Is Points Party free to use?",
+    answer: <p>Currently we do not offer a free tier. One could agrue, that at less than $5 per month Points Party is practically free.</p>
   },
   {
     question: "Can I get a refund?",
@@ -28,7 +37,7 @@ const faqList: FAQItemProps[] = [
   {
     question: "I have another question",
     answer: (
-      <div className="space-y-2 leading-relaxed">Cool, contact us by email</div>
+      <div className="space-y-2 leading-relaxed">Cool, contact me by email</div>
     ),
   },
 ];
