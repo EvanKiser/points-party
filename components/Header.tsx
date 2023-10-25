@@ -14,14 +14,6 @@ const links: {
   label: string;
 }[] = [
   {
-    href: "/#howto",
-    label: "How To",
-  },
-  {
-    href: "/#faq",
-    label: "FAQ",
-  },
-  {
     href: "/#pricing",
     label: "Pricing",
   },

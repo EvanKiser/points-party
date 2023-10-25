@@ -29,8 +29,7 @@ const faqList: FAQItemProps[] = [
     question: "Can I get a refund?",
     answer: (
       <p>
-        Yes! You can request a refund within 7 days of your purchase. Reach out
-        by email.
+        Yes! You can request a refund within 7 days of your purchase. Reach out on Twitter or by email at marc@shipfa.st
       </p>
     ),
   },
