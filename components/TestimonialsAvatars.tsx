@@ -7,19 +7,19 @@ const avatars: {
   {
     alt: "User",
     // Ideally, load from a statically generated image for better SEO performance (import userImage from "@/public/userImage.png")
+    src: "https://pbs.twimg.com/profile_images/1651932860796862466/gFVKdvX4_400x400.jpg",
+  },
+  {
+    alt: "User",
+    src: "https://pbs.twimg.com/profile_images/1514863683574599681/9k7PqDTA_400x400.jpg",
+  },
+  {
+    alt: "User",
+    src: "https://pbs.twimg.com/profile_images/1491192419345481732/eqiSI4Ra_400x400.jpg",
+  },
+  {
+    alt: "User",
     src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-  },
-  {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
   },
   {
     alt: "User",
@@ -66,7 +66,7 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
         </div>
 
         <div className="text-base text-base-content/80">
-          <span className="font-semibold text-base-content">32</span> booking the cheapest travel
+          <span className="font-semibold text-base-content">12</span> booking the cheapest travel
         </div>
       </div>
     </div>

@@ -18,9 +18,9 @@ const features: {
       <>
         <ul className="space-y-1">
           {[
-            "Quick and easy set up",
+            "60 second setup",
             "Choose up to 3 departure airports",
-            "Browse currently available deals",
+            "Browse currently available deals (coming soon)",
           ].map((item) => (
             <li key={item} className="flex items-center gap-3">
               <svg
@@ -64,7 +64,7 @@ const features: {
       <>
         <ul className="space-y-2">
           {[
-            "Get notified when we find deals from one of your departure airports",
+            "Get notified automatically when we find deals from one of your departure airports",
             "Easily compare the price in points to the price in dollars to know exactly how much you are saving", 
             "We support all major credit card transfer partners.",
           ].map((item) => (
@@ -110,6 +110,7 @@ const features: {
       <>
         <ul className="space-y-2">
           {[
+            "Save thousands of dollars of value",
             "Detailed flight details, booking instructions, and links",
             "We support all the major credit card transfer partners.",
           ].map((item) => (
@@ -211,15 +212,19 @@ const HowItWorks = () => {
           </p> */}
           <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8">
             {/* 💡 COPY TIP: Remind visitors about the value of your product. Why do they need it? */}
-            How It Works
+            Save Time, Save Money
           </h2>
           <div className="text-base-content/80 leading-relaxed mb-8 lg:text-lg">
             {/* 💡 COPY TIP: Explain how your product delivers what you promise in the headline. */}
-            At Points Party, finding and booking unbeatable deals on award travel is a breeze. 
-            Sit back and relax as we do the heavy lifting for you.
-            Our software is scouring the web 24/7 to find the best deals for you. 
-            When we spot an amazing offer that matches your preferences, you&apos;ll receive a notification right in your inbox.
+            Often the best way to redeem your credit card points to find a flight you want to book, 
+            transfer credit card points to the airline, and book the flight on the airline&apos;s site. Incredible 
+            deals can be found using this method but you have to know where to look and spend hours to find the 
+            deal. No longer! Let Points Party do it all for you! Everyone can save time and money with Points Party.
           </div>
+          <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8">
+            {/* 💡 COPY TIP: Remind visitors about the value of your product. Why do they need it? */}
+            It Could Not Be Easier
+          </h2>
         </div>
       </div>
 

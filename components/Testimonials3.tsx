@@ -11,23 +11,25 @@ const list: {
 }[] = [
   {
     // Optional, use for social media like Twitter. Does not link anywhere but cool to display
-    username: "marclou",
+    username: "",
     // REQUIRED
-    name: "Marc Lou",
+    name: "Joseph Johnson",
     // REQUIRED
-    text: "Really easy to use. The tutorials are really useful and explains how everything works. Hope to ship my next project really fast!",
+    text: "Points Party has been a game-changer for my travel. I used to just let me AMEX points pile up but now I use them to travel the world. I flew business to Tokyo for last month, thanks to a deal sent by Points Party. A must for any travel enthusiast!",
     // Optional, a statically imported image (usually from your public folder—recommended) or a link to the person's avatar. Shows a fallback letter if not provided
-    img: "https://pbs.twimg.com/profile_images/1514863683574599681/9k7PqDTA_400x400.jpg",
+    img: "https://pbs.twimg.com/profile_images/1651932860796862466/gFVKdvX4_400x400.jpg",
   },
   {
-    username: "the_mcnaveen",
-    name: "Naveen",
-    text: "Setting up everything from the ground up is a really hard, and time consuming process. What you pay for will save your time for sure.",
+    username: "",
+    name: "Alec Shunnarah",
+    text: "I was initially skeptical, but Points Party impressed me. The detailed alerts and excellent customer service stand out. I bagged a round trip to Costa Rica for my wife and I for only 50,000 points. It's more than a service; it's like having a personal deal hunter!",
+    img: "https://pbs.twimg.com/profile_images/1491192419345481732/eqiSI4Ra_400x400.jpg"
   },
   {
-    username: "wahab",
-    name: "Wahab Shaikh",
-    text: "Easily saves 15+ hrs for me setting up trivial stuff. Now, I can directly focus on shipping features rather than hours of setting up the same technologies from scratch. Feels like a super power! :D",
+    username: "",
+    name: "Evan Kiser",
+    text: "I used to spend way to many hours scouring different airlines to find the best place to transfer my Chase points. Not anymore. Points Party saves me so much time and finds better deals than I ever did. It's not just about the cost savings; it's also a time saver.",
+    img: "https://pbs.twimg.com/profile_images/1593423776338698244/zXnaNBRO_400x400.jpg",
   },
 ];
 
@@ -87,12 +89,12 @@ const Testimonials3 = () => {
         <div className="flex flex-col text-center w-full mb-20">
           <div className="mb-8">
             <h2 className="sm:text-5xl text-4xl font-extrabold text-base-content">
-              212 makers are already shipping faster!
+              12 people are already booking cheap free flights thanks to Points Party
             </h2>
           </div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80">
             Don&apos;t take our word for it. Here&apos;s what they have to say
-            about ShipFast.
+            about Points Party.
           </p>
         </div>
 
