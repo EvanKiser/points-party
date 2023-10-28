@@ -212,18 +212,18 @@ const HowItWorks = () => {
           </p> */}
           <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8">
             {/* 💡 COPY TIP: Remind visitors about the value of your product. Why do they need it? */}
-            Save Time, Save Money
+            Why Points Party?
           </h2>
           <div className="text-base-content/80 leading-relaxed mb-8 lg:text-lg">
             {/* 💡 COPY TIP: Explain how your product delivers what you promise in the headline. */}
-            Often the best way to redeem your credit card points to find a flight you want to book, 
-            transfer credit card points to the airline, and book the flight on the airline&apos;s site. Incredible 
+            Often the best way to redeem your credit card points is to find a flight you want to book, 
+            transfer your points to the airline&apos;s reward program, and book the flight on the airline&apos;s site. Incredible 
             deals can be found using this method but you have to know where to look and spend hours to find the 
             deal. No longer! Let Points Party do it all for you! Everyone can save time and money with Points Party.
           </div>
           <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8">
             {/* 💡 COPY TIP: Remind visitors about the value of your product. Why do they need it? */}
-            It Could Not Be Easier
+            It Could Not Be Easier!
           </h2>
         </div>
       </div>
