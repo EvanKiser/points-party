@@ -40,9 +40,7 @@ const config = {
       },
       {
         priceId:
-          process.env.NODE_ENV === "development"
-            ? "price_1NzuIXBHo1ckSRgyFq6mEWTW"
-            : "price_1NzuIXBHo1ckSRgyFq6mEWTW",
+          process.env.NODE_ENV === "development" ? "price_1NzuLzBHo1ckSRgy4yH3j3L1" : "price_1NzuLzBHo1ckSRgy4yH3j3L1",
         // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
         isFeatured: true,
         name: "Lifetime",
