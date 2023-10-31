@@ -5,6 +5,7 @@ import EmailProvider from "next-auth/providers/email";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import config from "@/config";
 import connectMongo from "./mongo";
+import { sendEmail } from "./mailgun";
 
 interface NextAuthOptionsExtended extends NextAuthOptions {
   adapter: any;
@@ -50,6 +51,18 @@ export const authOptions: NextAuthOptionsExtended = {
         session.user.id = token.sub;
       }
       return session;
+    },
+  },
+  events: {
+    signIn: async ({ user, isNewUser }) => {
+      if (isNewUser) {
+        sendEmail({
+          to: user.email,
+          subject: "Welcome to Points Party 🎉",
+          html: `<div><p><b>- Name:</b> ${user.name}</p><p><b>- Email:</b> ${user.email}</p></div>`, 
+          replyTo: config.mailgun.fromAdmin,
+        })
+      }
     },
   },
   session: {
