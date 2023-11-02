@@ -35,7 +35,6 @@ const Header = () => {
   const { status } = useSession();
   if (status === "authenticated" && links.length === 2) {
     links.push({ 'href': '/dashboard', 'label': 'Deals' });
-    links.push({ 'href': '/dashboard', 'label': 'Departure Airports' });
   }
   const cta: JSX.Element = (
     status == 'authenticated' ? 
