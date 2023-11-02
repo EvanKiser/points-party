@@ -45,7 +45,7 @@ const ButtonAccount = () => {
     <Popover className="relative z-10">
       {({ open }) => (
         <>
-          <Popover.Button className="btn">
+          <Popover.Button className="btn btn-primary">
             {session?.user?.image ? (
               <img
                 src={session?.user?.image}

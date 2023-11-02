@@ -15,14 +15,14 @@ const list: {
     // REQUIRED
     name: "Joseph Johnson",
     // REQUIRED
-    text: "Points Party has been a game-changer for my travel. I used to just let me AMEX points pile up but now I use them to travel the world. I flew business to Tokyo for last month, thanks to a deal sent by Points Party. A must for any travel enthusiast!",
+    text: "Points Party has been a game-changer for my travel. I used to just let my AMEX points pile up but now I use them to travel the world. I flew business to Tokyo last month, thanks to a deal sent by Points Party. A must for any travel enthusiast!",
     // Optional, a statically imported image (usually from your public folder—recommended) or a link to the person's avatar. Shows a fallback letter if not provided
     img: "https://pbs.twimg.com/profile_images/1651932860796862466/gFVKdvX4_400x400.jpg",
   },
   {
     username: "",
     name: "Alec Shunnarah",
-    text: "I was initially skeptical, but Points Party impressed me. The detailed alerts and excellent customer service stand out. I bagged a round trip to Costa Rica for my wife and I for only 50,000 points. It's more than a service; it's like having a personal deal hunter!",
+    text: "I was initially skeptical, but Points Party impressed me. The detailed alerts and excellent customer service stand out. I bagged a round trip to Costa Rica for my wife and I for only 15,000 points. It's more than a service; it's like having a personal deal hunter!",
     img: "https://pbs.twimg.com/profile_images/1491192419345481732/eqiSI4Ra_400x400.jpg"
   },
   {

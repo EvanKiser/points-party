@@ -3,29 +3,45 @@
 import { useState, useEffect } from "react";
 import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.png";
 import config from "@/config";
+import ButtonAccount from "./ButtonAccount";
 
 const links: {
   href: string;
   label: string;
 }[] = [
   {
+    href: "/#testimonials",
+    label: "Testimonials",
+  },
+  {
     href: "/#pricing",
     label: "Pricing",
   },
 ];
 
-const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
 
 // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  
+  const { status } = useSession();
+  if (status === "authenticated" && links.length === 2) {
+    links.push({ 'href': '/dashboard', 'label': 'Deals' });
+    links.push({ 'href': '/dashboard', 'label': 'Departure Airports' });
+  }
+  const cta: JSX.Element = (
+    status == 'authenticated' ? 
+    <ButtonAccount /> : 
+    <ButtonSignin extraStyle="btn-primary"/> 
+  )
 
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
