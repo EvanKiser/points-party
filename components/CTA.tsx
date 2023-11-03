@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import config from "@/config";
 
 const CTA = () => {
   return (
@@ -18,8 +20,12 @@ const CTA = () => {
           <p className="text-lg opacity-80 mb-12 md:mb-16">
             Let Points Party show you how
           </p>
-
-          <button className="btn btn-primary btn-wide">Get Points Party</button>
+          <Link
+            href="/departure-airports"
+            title="Departure Airports"
+          >
+          <button className="btn btn-primary btn-wide">Try {config.appName} Free For Free</button>
+        </Link>
         </div>
       </div>
     </section>

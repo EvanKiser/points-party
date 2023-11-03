@@ -43,7 +43,8 @@ const ButtonAccount = () => {
   if (status === "unauthenticated") return null;
 
   return (
-    <Popover className="relative z-10 btn bg-white hover:bg-white hover:border-base-white border-base-white">
+    // bg-transparent hover:bg-transparent border-none are used to override the styles of btn
+    <Popover className="relative z-10 btn bg-transparent hover:bg-transparent border-none">
       {({ open }) => (
         <>
           <Popover.Button className="btn btn-primary flex-grow">
