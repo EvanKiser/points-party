@@ -1,0 +1,398 @@
+[
+    {
+      "iataCode": "ORD",
+      "name": "Chicago O'Hare International Airport",
+      "popularity": 3084227,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "ATL",
+      "name": "Atlanta Hartsfield-Jackson International Airport",
+      "popularity": 3001991,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "LAX",
+      "name": "Los Angeles International Airport",
+      "popularity": 2461879,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "DFW",
+      "name": "Dallas Fort Worth International Airport",
+      "popularity": 2347044,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "DEN",
+      "name": "Denver International Airport",
+      "popularity": 2260105,
+      "tzName": "America/Denver"
+    },
+    {
+      "iataCode": "LAS",
+      "name": "Las Vegas Harry Reid International Airport",
+      "popularity": 1861495,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "JFK",
+      "name": "New York John F. Kennedy International Airport",
+      "popularity": 1650711,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "PHX",
+      "name": "Phoenix Sky Harbor International Airport",
+      "popularity": 1619871,
+      "tzName": "America/Phoenix"
+    },
+    {
+      "iataCode": "SEA",
+      "name": "Seattle Tacoma International Airport",
+      "popularity": 1572348,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "SFO",
+      "name": "San Francisco International Airport",
+      "popularity": 1563528,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "CLT",
+      "name": "Charlotte Douglas International Airport",
+      "popularity": 1510001,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "EWR",
+      "name": "New York Newark Liberty International Airport",
+      "popularity": 1504705,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "YYZ",
+      "name": "Toronto Pearson International Airport",
+      "popularity": 1428135,
+      "tzName": "America/Toronto"
+    },
+    {
+      "iataCode": "BOS",
+      "name": "Boston Logan International Airport",
+      "popularity": 1425208,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "MIA",
+      "name": "Miami International Airport",
+      "popularity": 1414242,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "MSP",
+      "name": "Minneapolis Saint Paul International Airport",
+      "popularity": 1382458,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "IAH",
+      "name": "Houston George Bush Intercontinental Airport",
+      "popularity": 1243918,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "MCO",
+      "name": "Orlando International Airport",
+      "popularity": 1214691,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "SLC",
+      "name": "Salt Lake City International Airport",
+      "popularity": 1152564,
+      "tzName": "America/Denver"
+    },
+    {
+      "iataCode": "LGA",
+      "name": "New York LaGuardia Airport",
+      "popularity": 1124155,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "PHL",
+      "name": "Philadelphia International Airport",
+      "popularity": 1003935,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "FLL",
+      "name": "Fort Lauderdale Hollywood International Airport",
+      "popularity": 984144,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "IAD",
+      "name": "Washington Dulles International Airport",
+      "popularity": 953886,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "DTW",
+      "name": "Detroit Metropolitan Wayne County Airport",
+      "popularity": 936364,
+      "tzName": "America/Detroit"
+    },
+    {
+      "iataCode": "BWI",
+      "name": "Baltimore Washington International Airport",
+      "popularity": 893076,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "DCA",
+      "name": "Washington Ronald Reagan National Airport",
+      "popularity": 889106,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "HNL",
+      "name": "Honolulu International Airport",
+      "popularity": 819869,
+      "tzName": "Pacific/Honolulu"
+    },
+    {
+      "iataCode": "MDW",
+      "name": "Chicago Midway International Airport",
+      "popularity": 799292,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "SAN",
+      "name": "San Diego International Airport",
+      "popularity": 793962,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "MEM",
+      "name": "Memphis International Airport",
+      "popularity": 771146,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "TPA",
+      "name": "Tampa International Airport",
+      "popularity": 758048,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "PDX",
+      "name": "Portland International Airport",
+      "popularity": 752586,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "DAL",
+      "name": "Dallas Love Field Airport",
+      "popularity": 744640,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "AUS",
+      "name": "Austin Bergstrom International Airport",
+      "popularity": 715900,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "OAK",
+      "name": "Oakland International Airport",
+      "popularity": 687077,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "ANC",
+      "name": "Anchorage Ted Stevens International Airport",
+      "popularity": 682742,
+      "tzName": "America/Anchorage"
+    },
+    {
+      "iataCode": "SNA",
+      "name": "Santa Ana John Wayne Airport",
+      "popularity": 660742,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "BNA",
+      "name": "Nashville International Airport",
+      "popularity": 659797,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "IND",
+      "name": "Indianapolis International Airport",
+      "popularity": 653767,
+      "tzName": "America/Indiana/Indianapolis"
+    },
+    {
+      "iataCode": "SJC",
+      "name": "San Jose International Airport",
+      "popularity": 632044,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "SDF",
+      "name": "Louisville International Airport",
+      "popularity": 609904,
+      "tzName": "America/Kentucky/Louisville"
+    },
+    {
+      "iataCode": "RDU",
+      "name": "Raleigh-Durham International Airport",
+      "popularity": 573135,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "TEB",
+      "name": "Teterboro Airport",
+      "popularity": 545260,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "SAT",
+      "name": "San Antonio International Airport",
+      "popularity": 539839,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "STL",
+      "name": "St. Louis Lambert International Airport",
+      "popularity": 492638,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "CVG",
+      "name": "Cincinnati Northern Kentucky International Airport",
+      "popularity": 478218,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "HOU",
+      "name": "Houston William P. Hobby Airport",
+      "popularity": 471887,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "SMF",
+      "name": "Sacramento International Airport",
+      "popularity": 460294,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "SJU",
+      "name": "San Juan Luis Munoz Marin International Airport",
+      "popularity": 455881,
+      "tzName": "America/Puerto_Rico"
+    },
+    {
+      "iataCode": "HPN",
+      "name": "White Plains Westchester County Airport",
+      "popularity": 453588,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "PIT",
+      "name": "Pittsburgh International Airport",
+      "popularity": 452325,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "PBI",
+      "name": "West Palm Beach International Airport",
+      "popularity": 449249,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "MSY",
+      "name": "New Orleans Louis Armstrong International Airport",
+      "popularity": 423861,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "CMH",
+      "name": "Columbus John Glenn International Airport",
+      "popularity": 415059,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "APA",
+      "name": "Denver Centennial Airport",
+      "popularity": 395371,
+      "tzName": "America/Denver"
+    },
+    {
+      "iataCode": "MCI",
+      "name": "Kansas City International Airport",
+      "popularity": 386959,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "CLE",
+      "name": "Cleveland Hopkins International Airport",
+      "popularity": 378371,
+      "tzName": "America/New_York"
+    },
+    {
+      "iataCode": "OGG",
+      "name": "Kahului Airport",
+      "popularity": 370182,
+      "tzName": "Pacific/Honolulu"
+    },
+    {
+      "iataCode": "MKE",
+      "name": "Milwaukee General Mitchell International Airport",
+      "popularity": 363927,
+      "tzName": "America/Chicago"
+    },
+    {
+      "iataCode": "ABQ",
+      "name": "Albuquerque International Airport",
+      "popularity": 361247,
+      "tzName": "America/Denver"
+    },
+    {
+      "iataCode": "BUR",
+      "name": "Burbank Bob Hope Airport",
+      "popularity": 358667,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "LGB",
+      "name": "Long Beach Airport",
+      "popularity": 342813,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "SCF",
+      "name": "Scottsdale Airport",
+      "popularity": 341584,
+      "tzName": "America/Phoenix"
+    },
+    {
+      "iataCode": "BOI",
+      "name": "Boise Airport",
+      "popularity": 331199,
+      "tzName": "America/Boise"
+    },
+    {
+      "iataCode": "VNY",
+      "name": "Van Nuys Airport",
+      "popularity": 330985,
+      "tzName": "America/Los_Angeles"
+    },
+    {
+      "iataCode": "AZA",
+      "name": "Phoenix Mesa Gateway Airport",
+      "popularity": 328548,
+      "tzName": "America/Phoenix"
+    }
+]
