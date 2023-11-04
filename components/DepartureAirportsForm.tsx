@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Airport = {
     iataCode: string
@@ -11,6 +11,37 @@ export const DepartureAirportsForm = () => {
     const [selectedAirports, setSelectedAirports] = useState<string[]>([]);
     const [isTouched, setIsTouched] = useState(false); // New state to track if the form was touched
 
+    useEffect(() => {
+        // Call getAirports when the component mounts
+        getAirports();
+    }, []); // The empty array ensures this effect only runs once after the initial render
+
+    const getAirports = async () => {
+        try {
+            const response = await fetch('/api/airports');
+            if (!response.ok) {
+                throw new Error('Failed to fetch airports');
+            }
+            const data = await response.json();
+            setSelectedAirports(data.departureAirports); // Assuming the response has an `airports` array
+        } catch (error) {
+            console.error('Error fetching airports:', error);
+            // Handle the error state as appropriate
+        }
+    };
+    const saveAirports = async (selectedAirports: string[]) => {
+        const response = await fetch('/api/airports', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(selectedAirports),
+        });
+      
+        // Handle the response
+        console.log(response)
+    };
+
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         setIsTouched(true); // Set touched to true when the form is submitted
@@ -22,7 +53,7 @@ export const DepartureAirportsForm = () => {
         }
 
         console.log("Selected Airports:", selectedAirports);
-        // Further processing...
+        saveAirports(selectedAirports);
     }
 
     const airports: Airport[] = require('../public/data/departure_airports.json');

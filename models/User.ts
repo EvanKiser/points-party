@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    departureAirports: {
+      type: [String],
+      default: [],
+    },
   },
   {
     timestamps: true,
