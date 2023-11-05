@@ -70,15 +70,6 @@ export const DepartureAirportsForm = () => {
         saveAirports(departureAirports);
     }
 
-    // Function to handle changing a specific airport in the departureAirports array
-    const handleSelectChange1 = (newValue: string) => {
-        // Create a new array with the updated value at the specific index
-        const updatedAirports = [...departureAirports];
-        updatedAirports[0] = newValue;
-        setDepartureAirports(updatedAirports);
-        return updatedAirports[0];
-    };
-
     const handleSelectChange = (index: number, newValue: string) => {
         // Create a new array with the updated value at the specific index
         const updatedAirports = [...departureAirports];
@@ -94,10 +85,6 @@ export const DepartureAirportsForm = () => {
         return airports.find((airport) => airport.iataCode === airportCode)?.name || '';
     };
 
-    const airportOptions = filteredAirports.map((airport: Airport) => (
-        <option key={airport.iataCode} value={airport.iataCode}>{`${airport.iataCode} ${airport.name}`}</option>
-    ));
-
     // Dynamically set the class for the select elements based on whether they have been touched and are required
     const selectClass = (isTouched && departureAirports.length === 0) ? "select w-full max-w-xs border-red-500" : "select w-full max-w-xs";
     return (
@@ -105,7 +92,8 @@ export const DepartureAirportsForm = () => {
             <h1 className="text-3xl md:text-4xl font-extrabold">Departure Airports</h1>
             <p className="mt-4">Choose up to three departure airports to receive alerts</p>
             <div className="flex flex-col space-y-4 mt-4">
-                <Combobox value={departureAirports[0] || "Home Airport"} onChange={handleSelectChange1}>
+            {[0, 1, 2].map((index) => (
+                <Combobox key={index} value={departureAirports[index] || "Home Airport"} onChange={(new_airport) => handleSelectChange(index, new_airport)}>
                     <div className="relative mt-1">
                         <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
                         <Combobox.Input 
@@ -127,7 +115,7 @@ export const DepartureAirportsForm = () => {
                             leaveTo="opacity-0"
                             afterLeave={() => setQuery('')}
                         >
-                            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+                            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-10">
                             {filteredAirports.length === 0 && query !== '' ? (
                                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                                     Nothing found.
@@ -150,7 +138,7 @@ export const DepartureAirportsForm = () => {
                                             selected ? 'font-medium' : 'font-normal'
                                         }`}
                                         >
-                                        {airport.iataCode} {airport.name}
+                                        {airport.iataCode + " - " + airport.name}
                                         </span>
                                         {selected ? (
                                         <span
@@ -170,17 +158,6 @@ export const DepartureAirportsForm = () => {
                         </Transition>
                     </div>
                 </Combobox>
-            {[0, 1, 2].map((index) => (
-                <select
-                    key={index}
-                    required
-                    className={selectClass}
-                    value={departureAirports[index] || ""}
-                    onChange={(e) => handleSelectChange(index, e.target.value)}
-                >
-                    {index === 0 ? <option value="" disabled selected hidden>Home Airport</option> : <option value="">None</option>}
-                    {airportOptions}
-                </select>
             ))}
             </div>
             <button
