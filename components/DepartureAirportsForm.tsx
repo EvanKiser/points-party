@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 
 type Airport = {
@@ -8,7 +9,7 @@ type Airport = {
 }
 
 export const DepartureAirportsForm = () => {
-    const [selectedAirports, setSelectedAirports] = useState<string[]>([]);
+    const [departureAirports, setDepartureAirports] = useState<string[]>([]);
     const [isTouched, setIsTouched] = useState(false); // New state to track if the form was touched
 
     useEffect(() => {
@@ -23,38 +24,46 @@ export const DepartureAirportsForm = () => {
                 throw new Error('Failed to fetch airports');
             }
             const data = await response.json();
-            setSelectedAirports(data.departureAirports); // Assuming the response has an `airports` array
+
+            setDepartureAirports(data.departureAirports);
         } catch (error) {
             console.error('Error fetching airports:', error);
             // Handle the error state as appropriate
         }
     };
-    const saveAirports = async (selectedAirports: string[]) => {
-        const response = await fetch('/api/airports', {
+
+    const saveAirports = async (departureAirports: string[]) => {
+        await fetch('/api/airports', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(selectedAirports),
+          body: JSON.stringify(departureAirports),
         });
       
-        // Handle the response
-        console.log(response)
     };
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         setIsTouched(true); // Set touched to true when the form is submitted
 
-        if (selectedAirports.length === 0 || selectedAirports[0] === "") {
+        if (departureAirports.length === 0 || departureAirports[0] === "") {
             // If no selection was made, handle it accordingly (e.g., showing an error message)
             console.log("Please select at least one airport.");
             return;
         }
 
-        console.log("Selected Airports:", selectedAirports);
-        saveAirports(selectedAirports);
+        console.log("Departure Airports:", departureAirports);
+        saveAirports(departureAirports);
     }
+
+    // Function to handle changing a specific airport in the departureAirports array
+    const handleSelectChange = (index: number, newValue: string) => {
+        // Create a new array with the updated value at the specific index
+        const updatedAirports = [...departureAirports];
+        updatedAirports[index] = newValue;
+        setDepartureAirports(updatedAirports);
+    };
 
     const airports: Airport[] = require('../public/data/departure_airports.json');
     const airportOptions = airports.map((airport: Airport) => (
@@ -62,31 +71,25 @@ export const DepartureAirportsForm = () => {
     ));
 
     // Dynamically set the class for the select elements based on whether they have been touched and are required
-    const selectClass = (isTouched && selectedAirports.length === 0) ? "select w-full max-w-xs border-red-500" : "select w-full max-w-xs";
+    const selectClass = (isTouched && departureAirports.length === 0) ? "select w-full max-w-xs border-red-500" : "select w-full max-w-xs";
+    console.log(departureAirports)
     return (
         <form className="bg-neutral-100 p-8 rounded-lg" onSubmit={handleSubmit}>
             <h1 className="text-3xl md:text-4xl font-extrabold">Departure Airports</h1>
             <p className="mt-4">Choose up to three departure airports to receive alerts</p>
             <div className="flex flex-col space-y-4 mt-4">
+            {[0, 1, 2].map((index) => (
                 <select
+                    key={index}
                     required
                     className={selectClass}
-                    value={selectedAirports[0] || ""}
-                    onChange={(e) =>
-                        setSelectedAirports([e.target.value])
-                    }
+                    value={departureAirports[index] || ""}
+                    onChange={(e) => handleSelectChange(index, e.target.value)}
                 >
-                    <option value="" disabled selected hidden>Home Airport</option>
+                    {index === 0 ? <option value="" disabled selected hidden>Home Airport</option> : <option value="">None</option>}
                     {airportOptions}
                 </select>
-                <select className="select w-full max-w-xs">
-                    <option value="" disabled selected hidden>Optional</option>
-                    {airportOptions}
-                </select>
-                <select className="select w-full max-w-xs">
-                    <option value="" disabled selected hidden>Optional</option>
-                    {airportOptions}
-                </select>
+            ))}
             </div>
             <button
                 type="submit"

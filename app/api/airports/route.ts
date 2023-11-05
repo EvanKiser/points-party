@@ -13,7 +13,6 @@ export async function POST(req: NextRequest) {
     if (!session) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    console.log(session)
     
     try {
         // Connect to the MongoDB database
@@ -26,18 +25,17 @@ export async function POST(req: NextRequest) {
         }
     
         // Parse the request body to get the selected airports
-        const selectedAirports = await req.json();
-        if (!selectedAirports) {
+        const departureAirports = await req.json();
+        if (!departureAirports) {
             return NextResponse.json({ error: "Selected airports not provided" }, { status: 400 });
         }
 
         // Update the user's selectedAirports field
-        user.selectedAirports = selectedAirports;
+        user.departureAirports = departureAirports;
         
         // Save the updated user to the database
-        console.log("here")
         await user.save();
-        console.log("now here")
+
         // Return a successful response
         return NextResponse.json({ message: "Departure Airports updated successfully" }, { status: 200 });
     } catch (e) {
@@ -60,6 +58,7 @@ export async function GET() {
 
         // Retrieve the user from the database
         const user = await User.findById(session?.user?.id);
+
         if (!user) {
             return NextResponse.json({ error: "User not found" }, { status: 404 });
         }
