@@ -1,7 +1,6 @@
 import React from "react";
-import { useState, useEffect, Fragment } from "react";
-import { Combobox, Transition } from '@headlessui/react';
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { useState, useEffect } from "react";
+import { AirportCombobox } from "./AirportComboBox";
 
 type Airport = {
     iataCode: string
@@ -12,18 +11,9 @@ type Airport = {
 
 export const DepartureAirportsForm = () => {
     const [departureAirports, setDepartureAirports] = useState<string[]>([]);
-    const [isTouched, setIsTouched] = useState(false); // New state to track if the form was touched
     const [query, setQuery] = useState<string>("");
 
     const airports: Airport[] = require('../public/data/departure_airports.json');
-
-    const filteredAirports =
-        query === ''
-            ? airports
-            : airports.filter((airport) =>
-                airport.name.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, '')) ||
-                airport.iataCode.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
-            );
 
     useEffect(() => {
         // Call getAirports when the component mounts
@@ -58,7 +48,6 @@ export const DepartureAirportsForm = () => {
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        setIsTouched(true); // Set touched to true when the form is submitted
 
         if (departureAirports.length === 0 || departureAirports[0] === "") {
             // If no selection was made, handle it accordingly (e.g., showing an error message)
@@ -77,87 +66,26 @@ export const DepartureAirportsForm = () => {
         setDepartureAirports(updatedAirports);
     };
 
-    // Function that returns the airport name or "Home Airport" if the airport code is empty
-    const displayValue = (airportCode: string) => {
-        if (airportCode === "" && departureAirports.length === 0) {
-            return "Home Airport";
-        }
-        return airports.find((airport) => airport.iataCode === airportCode)?.name || '';
-    };
+    const comboboxLabels = ["Home Airport", "Optional", "Optional"];
 
-    // Dynamically set the class for the select elements based on whether they have been touched and are required
-    const selectClass = (isTouched && departureAirports.length === 0) ? "select w-full max-w-xs border-red-500" : "select w-full max-w-xs";
     return (
         <form className="bg-neutral-100 p-8 rounded-lg" onSubmit={handleSubmit}>
             <h1 className="text-3xl md:text-4xl font-extrabold">Departure Airports</h1>
             <p className="mt-4">Choose up to three departure airports to receive alerts</p>
             <div className="flex flex-col space-y-4 mt-4">
             {[0, 1, 2].map((index) => (
-                <Combobox key={index} value={departureAirports[index] || "Home Airport"} onChange={(new_airport) => handleSelectChange(index, new_airport)}>
-                    <div className="relative mt-1">
-                        <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
-                        <Combobox.Input 
-                            displayValue={displayValue}
-                            className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-                            onChange={(event) => setQuery(event.target.value)} 
-                            />
-                            <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                                <ChevronUpDownIcon
-                                    className="h-5 w-5 text-gray-400"
-                                    aria-hidden="true"
-                                />
-                            </Combobox.Button>
-                        </div>
-                        <Transition
-                            as={Fragment}
-                            leave="transition ease-in duration-100"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                            afterLeave={() => setQuery('')}
-                        >
-                            <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-10">
-                            {filteredAirports.length === 0 && query !== '' ? (
-                                <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                                    Nothing found.
-                                </div>
-                            ) : (
-                                filteredAirports.map((airport) => (
-                                <Combobox.Option
-                                    key={airport.iataCode}
-                                    className={({ active }) =>
-                                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                                        active ? 'bg-teal-600 text-white' : 'text-gray-900'
-                                    }`
-                                    }
-                                    value={airport.iataCode}
-                                >
-                                    {({ selected, active }) => (
-                                    <>
-                                        <span
-                                        className={`block truncate ${
-                                            selected ? 'font-medium' : 'font-normal'
-                                        }`}
-                                        >
-                                        {airport.iataCode + " - " + airport.name}
-                                        </span>
-                                        {selected ? (
-                                        <span
-                                            className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                                            active ? 'text-white' : 'text-teal-600'
-                                            }`}
-                                        >
-                                            <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                                        </span>
-                                        ) : null}
-                                    </>
-                                    )}
-                                </Combobox.Option>
-                                ))
-                            )}
-                            </Combobox.Options>
-                        </Transition>
-                    </div>
-                </Combobox>
+                <div key={index} className="mb-2">
+                    <label className="block text-lg font-medium text-gray-700 mb-2">
+                        {comboboxLabels[index]}
+                    </label>
+                    <AirportCombobox       
+                        airports={airports}
+                        selectedAirport={departureAirports[index] || ""}
+                        onAirportChange={(newAirport) => handleSelectChange(index, newAirport)}
+                        query={query}
+                        setQuery={setQuery}
+                    />
+                </div>
             ))}
             </div>
             <button
