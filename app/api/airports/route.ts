@@ -7,6 +7,17 @@ import User from "@/models/User";
 // This route is used to update users airport selections in the database.
 // The API call is initiated by <DepartatureAirportsForm />
 export async function POST(req: NextRequest) {
+
+    // Parse the request body to get the selected airports
+    const departureAirports = await req.json();
+    console.log(departureAirports)
+    if ((Array.isArray(departureAirports) && 
+        departureAirports.length === 0) ||
+        (!departureAirports.some((airport: string) => airport !== "None"))) 
+    {
+        return NextResponse.json({ error: "Selected airports not provided" }, { status: 400 });
+    }
+
     const session = await getServerSession(authOptions);
 
     // Check if the user is authenticated
@@ -22,12 +33,6 @@ export async function POST(req: NextRequest) {
         const user = await User.findById(session?.user?.id);
         if (!user) {
             return NextResponse.json({ error: "User not found" }, { status: 404 });
-        }
-    
-        // Parse the request body to get the selected airports
-        const departureAirports = await req.json();
-        if (!departureAirports) {
-            return NextResponse.json({ error: "Selected airports not provided" }, { status: 400 });
         }
 
         // Update the user's selectedAirports field

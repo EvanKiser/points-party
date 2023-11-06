@@ -14,6 +14,7 @@ interface AirportComboboxProps {
   onAirportChange: (newAirport: string) => void;
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
+  includeNoneOption?: boolean;
 }
 
 export const AirportCombobox: React.FC<AirportComboboxProps> = ({
@@ -21,7 +22,8 @@ export const AirportCombobox: React.FC<AirportComboboxProps> = ({
   selectedAirport,
   onAirportChange,
   query,
-  setQuery
+  setQuery,
+  includeNoneOption
 }) => {
   const filteredAirports =
     query === ''
@@ -33,6 +35,9 @@ export const AirportCombobox: React.FC<AirportComboboxProps> = ({
         );
 
   const displayValue = (airportCode: string) => {
+    if (airportCode === "None" || airportCode === "") {
+      return "None";
+    }
     const airport = airports.find((airport) => airport.iataCode === airportCode);
     return airport ? `${airport.iataCode} - ${airport.name}` : '';
   };
@@ -58,6 +63,38 @@ export const AirportCombobox: React.FC<AirportComboboxProps> = ({
           afterLeave={() => setQuery('')}
         >
           <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-10">
+            {includeNoneOption && (
+              <Combobox.Option
+                key="None"
+                className={({ active }) =>
+                  `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                    active ? 'bg-teal-600 text-white' : 'text-gray-900'
+                  }`
+                }
+                value="None"
+              >
+                {({ selected, active }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? 'font-bold' : 'font-normal'
+                        }`}
+                      >
+                        None
+                      </span>
+                      {selected ? (
+                        <span
+                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                            active ? 'text-white' : 'text-teal-600'
+                          }`}
+                        >
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                )}
+              </Combobox.Option>
+            )}
             {filteredAirports.length === 0 && query !== '' ? (
               <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                 Nothing found.
