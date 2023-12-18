@@ -1,6 +1,6 @@
 # Points Party
 
-Hey 👋 it's Evan from [Points Party](https://wwww.pointsparty.io). Let's get your startup off the ground, FAST ⚡️
+Hey 👋 it's Evan from [Points Party](https://wwww.pointsparty.io). Let's get your startup off the ground, FAST!⚡️
 
 <sub>**Watch/Star the repo to be notified when updates are pushed**</sub>
 
