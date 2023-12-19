@@ -28,7 +28,7 @@ const config = {
         // The price you want to display, the one user will be charged on Stripe.
         price: 50,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 100,
+        priceAnchor: 75,
         bottomText: "Yearly Subscription",
         features: [
           { name: "Deals on economy, business, & first class flights" },
@@ -46,7 +46,7 @@ const config = {
         name: "Lifetime",
         description: "Only the Best Forever",
         price: 150,
-        priceAnchor: 300,
+        priceAnchor: 200,
         bottomText: "Pay once. Access forever.",
         features: [
           { name: "Deals on economy, business, & first class flights" },
