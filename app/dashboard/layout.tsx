@@ -20,5 +20,9 @@ export default async function LayoutPrivate({
     redirect(config.auth.loginUrl);
   }
 
+  // If you are not a paying subscriber than show a page with a button to upgrade your plan
+
+  console.log(session)
+
   return <>{children}</>;
 }
