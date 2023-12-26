@@ -26,7 +26,7 @@ const config = {
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
         description: "One Year of Access",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 50,
+        price: 49,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
         priceAnchor: 75,
         bottomText: "Yearly Subscription",
@@ -40,13 +40,13 @@ const config = {
       },
       {
         priceId:
-          process.env.NODE_ENV === "development" ? "price_1NzuLzBHo1ckSRgy4yH3j3L1" : "price_1NzuLzBHo1ckSRgy4yH3j3L1",
+          process.env.NODE_ENV === "development" ? "price_1ORipsBHo1ckSRgyOOhVplk9" : "price_1ORipsBHo1ckSRgyOOhVplk9",
         // This plan will look different on the pricing page, it will be highlighted. You can only have one plan with isFeatured: true
         isFeatured: true,
         name: "Lifetime",
         description: "Only the Best Forever",
-        price: 150,
-        priceAnchor: 200,
+        price: 179,
+        priceAnchor: 260,
         bottomText: "Pay once. Access forever.",
         features: [
           { name: "Deals on economy, business, & first class flights" },
