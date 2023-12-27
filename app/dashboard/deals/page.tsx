@@ -1,4 +1,4 @@
-import { RewardCard } from "@/components/RewardCard";
+import { DealCard } from "@/components/DealCard";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +10,7 @@ export default async function Deals() {
     <main className="min-h-screen p-8 pb-24 flex items-center justify-center">
         <section className="max-w-xl mx-auto space-y-8">
             <div className="flex flex-col items-center">
-              <RewardCard destination="New York" origin="London" points={1000} cabinClass="First" carrierLogo="https://1000logos.net/wp-content/uploads/2020/03/Emirates-Logo.png" carrier="Emirates" imageUrl="https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/25/12/eiffel.jpg" />
+              <DealCard destination="New York" origin="London" points={1000} cabinClass="First" carrierLogo="https://1000logos.net/wp-content/uploads/2020/03/Emirates-Logo.png" carrier="Emirates" imageUrl="https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/25/12/eiffel.jpg" />
             </div>
         </section>
     </main>
