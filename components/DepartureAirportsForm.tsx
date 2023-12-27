@@ -1,9 +1,8 @@
-import { getServerSession } from "next-auth/next";
+import { useSession } from "next-auth/react";
 import React from "react";
 import { useState, useEffect } from "react";
 import config from "@/config";
 import connectMongo from "@/libs/mongoose";
-import { authOptions } from "@/libs/next-auth";
 import User from "@/models/User";
 import { AirportCombobox } from "./AirportComboBox";
 import ButtonCheckout from "./ButtonCheckout";
@@ -19,6 +18,7 @@ type BannerType = 'error' | 'success' | null;
 
 export const DepartureAirportsForm = () => {
     const [departureAirports, setDepartureAirports] = useState<string[]>([]);
+    const [hasAccess, setHasAccess] = useState<boolean>(false);
     const [banner, setBanner] = useState<{ type: BannerType; message: string }>({ type: null, message: '' });
     const [query, setQuery] = useState<string>("");
 
@@ -27,6 +27,11 @@ export const DepartureAirportsForm = () => {
     useEffect(() => {
         // Call getAirports when the component mounts
         getAirports();
+    }, []); // The empty array ensures this effect only runs once after the initial render
+
+    useEffect(() => {
+        // Call getHasAccess when the component mounts
+        getHasAccess();
     }, []); // The empty array ensures this effect only runs once after the initial render
 
     useEffect(() => {
@@ -54,24 +59,18 @@ export const DepartureAirportsForm = () => {
         }
     };
 
-    const hasAccess = async () => {
-        const session = await getServerSession(authOptions);
-        if (session) {
-            try {
-                await connectMongo();
-          
-                const { id } = session.user;
-          
-                const user = await User.findById(id);
-
-                if (user?.hasAccess) {
-                    return true;
-                }
-        } catch (e) {
-            console.error(e);
-            return false;
-        }
-        return false;
+    const getHasAccess = async () => {
+        try {
+            const response = await fetch('/api/access');
+            if (!response.ok) {
+                throw new Error('Failed to fetch airports');
+            }
+            const data = await response.json();
+            console.log(data)
+            setHasAccess(data.hasAccess);
+        } catch (error) {
+            console.error('Error fetching access:', error);
+            setHasAccess(false);
         }
     };
 
@@ -183,8 +182,13 @@ export const DepartureAirportsForm = () => {
             >
                 Save
             </button>
-            {hasAccess() && (
-                <ButtonCheckout priceId={config.stripe.plans[0].priceId} mode={'subscription'} />
+            {!hasAccess && (
+                <div className="mt-4">
+                    <ButtonCheckout
+                        priceId={config.stripe.plans[0].priceId}
+                        mode={'subscription'}
+                    />
+                </div>
             )}
         </form>
     </>
