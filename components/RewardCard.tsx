@@ -8,7 +8,7 @@ interface RewardCardProps {
     imageUrl: string;
   }
   
-  export const RewardCard: React.FC<RewardCardProps> = ({
+  export const RewardCard = ({
     destination,
     origin,
     points,
@@ -16,7 +16,7 @@ interface RewardCardProps {
     carrierLogo,
     carrier,
     imageUrl,
-  }) => {
+  }: RewardCardProps) => {
     return (
       <div className="w-72 border border-gray-300 rounded overflow-hidden bg-orange-50 relative" style={{ borderRadius: '5%' }}>
         <div className="h-48 bg-cover bg-center relative" style={{ backgroundImage: `url(${imageUrl})` }}>
