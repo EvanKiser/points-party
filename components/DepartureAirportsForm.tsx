@@ -1,9 +1,6 @@
-import { useSession } from "next-auth/react";
 import React from "react";
 import { useState, useEffect } from "react";
 import config from "@/config";
-import connectMongo from "@/libs/mongoose";
-import User from "@/models/User";
 import { AirportCombobox } from "./AirportComboBox";
 import ButtonCheckout from "./ButtonCheckout";
 
