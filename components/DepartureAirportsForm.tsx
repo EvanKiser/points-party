@@ -175,21 +175,23 @@ export const DepartureAirportsForm = () => {
                 </div>
             ))}
             </div>
-            <button
-                type="submit"
-                className="btn btn-primary py-2 px-4 mt-4 w-full"
-                onClick={handleSubmit}
-            >
-                Save
-            </button>
-            {!hasAccess && (
-                <div className="mt-4">
-                    <ButtonCheckout
-                        priceId={config.stripe.plans[0].priceId}
-                        mode={'subscription'}
-                    />
-                </div>
-            )}
+            <div className={`mt-4 ${!hasAccess ? 'flex' : ''}`}>
+                <button
+                    type="submit"
+                    className={`btn btn-primary py-2 px-4 ${!hasAccess ? 'w-1/2 mr-2' : 'w-full'}`}
+                    onClick={handleSubmit}
+                >
+                    Save
+                </button>
+                {!hasAccess && (
+                    <div className="w-1/2">
+                        <ButtonCheckout
+                            priceId={config.stripe.plans[0].priceId}
+                            mode={'subscription'}
+                        />
+                    </div>
+                )}
+            </div>
         </form>
     </>
     )
