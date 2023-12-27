@@ -42,12 +42,12 @@ const Step = ({ emoji, text }: { emoji: string; text: string }) => {
 const Problem = () => {
   return (
     <section className="bg-base-200 text-black">
-      <div className="max-w-7xl mx-auto px-2 md:py-16 text-center">
+      <div className="max-w-7xl mx-auto px-8 py-16 md:py-32 text-center">
         <h2 className="max-w-3xl mx-auto font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-8">
           Finding Award Travel Deals Takes Too Much Time
         </h2>
         <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-12 md:mb-8">
-          Which airlines have the best deals, promos, partner airlines, points to dollars ratio... There&apos;s so much going on.
+          Which airlines have the best deals, promos, partner airlines, so many places to go... There&apos;s too much going on
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-6">
@@ -59,7 +59,7 @@ const Problem = () => {
 
           <Arrow extraStyle="md:-scale-x-100 md:-rotate-90" />
 
-          <Step emoji="😔" text="Realize you will never find the best deals on award travel" />
+          <Step emoji="😔" text="Realize it is impossible to do manually" />
         </div>
       </div>
     </section>

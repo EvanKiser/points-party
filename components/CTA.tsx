@@ -24,7 +24,7 @@ const CTA = () => {
             href="/departure-airports"
             title="Departure Airports"
           >
-          <button className="btn btn-primary btn-wide">Try {config.appName} Free For Free</button>
+          <button className="btn btn-primary btn-wide">Try {config.appName} Now!</button>
         </Link>
         </div>
       </div>
