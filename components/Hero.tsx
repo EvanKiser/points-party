@@ -14,7 +14,7 @@ const Hero = () => {
           Travel Luxuriously After Saving 50-80% On Flights Using Miles Or Credit Card Points.
         </p>
         <Link href="/#pricing" className="btn btn-primary btn-wide">
-          Try {config.appName} Free For Free
+          Get {config.appName} Now!
         </Link>
         <TestimonialsAvatars priority={true} />
       </div>
