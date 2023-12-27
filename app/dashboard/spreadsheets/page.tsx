@@ -1,4 +1,3 @@
-import config from "@/config";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -15,7 +14,7 @@ export default async function Spreadsheets() {
                     The Cheapest Award Travel Per Month Per Airline Per Cabin Class For Hundreds Of Routes
                 </h3>
                 <Link href="https://docs.google.com/spreadsheets/d/1551UOgUnN3mdI-ZmKZOEAUtspo3oak8OjDvoweaQvnM/" className="btn btn-primary btn-wide">
-                    Click Here To Access Award Travel Spreadsheets
+                    Award Travel Spreadsheets
                 </Link>
             </div>
         </section>

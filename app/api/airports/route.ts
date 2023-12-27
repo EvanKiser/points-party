@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
     // Parse the request body to get the selected airports
     const departureAirports = await req.json();
-    console.log(departureAirports)
+
     if ((Array.isArray(departureAirports) && 
         departureAirports.length === 0) ||
         (!departureAirports.some((airport: string) => airport !== "None"))) 
@@ -69,7 +69,7 @@ export async function GET() {
         }
         
         const { departureAirports } = user;
-        console.log(departureAirports)
+
         return new Response(JSON.stringify({ departureAirports }), { status: 200, headers: { 'Content-Type': 'application/json' } });
     } catch (e) {
         console.error(e);

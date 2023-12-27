@@ -1,6 +1,12 @@
+import { getServerSession } from "next-auth/next";
 import React from "react";
 import { useState, useEffect } from "react";
+import config from "@/config";
+import connectMongo from "@/libs/mongoose";
+import { authOptions } from "@/libs/next-auth";
+import User from "@/models/User";
 import { AirportCombobox } from "./AirportComboBox";
+import ButtonCheckout from "./ButtonCheckout";
 
 type Airport = {
     iataCode: string
@@ -45,6 +51,27 @@ export const DepartureAirportsForm = () => {
         } catch (error) {
             console.error('Error fetching airports:', error);
             // Handle the error state as appropriate
+        }
+    };
+
+    const hasAccess = async () => {
+        const session = await getServerSession(authOptions);
+        if (session) {
+            try {
+                await connectMongo();
+          
+                const { id } = session.user;
+          
+                const user = await User.findById(id);
+
+                if (user?.hasAccess) {
+                    return true;
+                }
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
+        return false;
         }
     };
 
@@ -156,6 +183,9 @@ export const DepartureAirportsForm = () => {
             >
                 Save
             </button>
+            {hasAccess() && (
+                <ButtonCheckout priceId={config.stripe.plans[0].priceId} mode={'subscription'} />
+            )}
         </form>
     </>
     )
