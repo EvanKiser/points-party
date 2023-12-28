@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
+import { DealCard } from "@/components/DealCard";
 import config from "@/config";
 import Link from "next/link";
 
@@ -18,15 +19,11 @@ const Hero = () => {
         </Link>
         <TestimonialsAvatars priority={true} />
       </div>
-      <div className="lg:w-full">
-        <Image
-          src="/hero-image.png"
-          alt="Four Deal Cards"
-          className="w-full"
-          priority={true}
-          width={500}
-          height={500}
-        />
+      <div className="lg:w-full grid md:grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8">
+        <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrierLogo="https://1000logos.net/wp-content/uploads/2020/03/Air-France-Logo-2009.jpg" carrier="Air France" imageUrl="https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/25/12/eiffel.jpg" />
+        <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrierLogo="https://1000logos.net/wp-content/uploads/2020/04/Singapore-Airlines-Logo.png" carrier="Singapore Airlines" imageUrl="https://static.independent.co.uk/2023/06/02/12/iStock-1157937978.jpg" />
+        <DealCard destination="Dubai" origin="London" points={70000} cabinClass="First" carrierLogo="https://1000logos.net/wp-content/uploads/2020/03/Emirates-Logo.png" carrier="Emirates" imageUrl="https://i0.wp.com/onedayitinerary.com/wp-content/uploads/2017/04/Dubai.jpg?resize=723%2C482" />
+        <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrierLogo="https://1000logos.net/wp-content/uploads/2017/06/United-Airlines-Logo.png" carrier="United" imageUrl="https://www.nationsonline.org/gallery/Madagascar/Allee-des-Baobabs-Madagascar.jpg" />
       </div>
     </section>
   );
