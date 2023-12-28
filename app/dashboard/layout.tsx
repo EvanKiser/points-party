@@ -29,7 +29,7 @@ export default async function LayoutPrivate({
 
   const user = await User.findById(id);
 
-  if (!user?.customerId) {
+  if (!user?.hasAccess) {
     return (
       <main className="min-h-screen p-8 pb-24 flex items-center justify-center">
           <section className="max-w-xl mx-auto space-y-8">

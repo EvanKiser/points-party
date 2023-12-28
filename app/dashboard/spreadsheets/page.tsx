@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -7,17 +8,20 @@ export const dynamic = "force-dynamic";
 // See https://shipfa.st/docs/tutorials/private-page
 export default async function Spreadsheets() {
   return (
-    <main className="min-h-screen p-8 pb-24 flex items-center justify-center">
-        <section className="max-w-xl mx-auto space-y-8">
-            <div className="flex flex-col items-center">
-                <h3 className="text-3xl md:text-4xl font-extrabold text-center mb-4">
-                    The Cheapest Award Travel Per Month Per Airline Per Cabin Class For Hundreds Of Routes
-                </h3>
-                <Link href="https://docs.google.com/spreadsheets/d/1551UOgUnN3mdI-ZmKZOEAUtspo3oak8OjDvoweaQvnM/" className="btn btn-primary btn-wide">
-                    Award Travel Spreadsheets
-                </Link>
-            </div>
-        </section>
-    </main>
+    <>
+        <Header />
+        <main className="min-h-screen p-8 pb-24 flex items-center justify-center">
+            <section className="max-w-xl mx-auto space-y-8">
+                <div className="flex flex-col items-center">
+                    <h3 className="text-3xl md:text-4xl font-extrabold text-center mb-4">
+                        The Cheapest Award Travel Per Month Per Airline Per Cabin Class For Hundreds Of Routes
+                    </h3>
+                    <Link href="https://docs.google.com/spreadsheets/d/1551UOgUnN3mdI-ZmKZOEAUtspo3oak8OjDvoweaQvnM/" className="btn btn-primary btn-wide">
+                        Award Travel Spreadsheets
+                    </Link>
+                </div>
+            </section>
+        </main>
+    </>
   );
 }

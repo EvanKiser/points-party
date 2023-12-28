@@ -23,6 +23,14 @@ const links: {
     href: "/#pricing",
     label: "Pricing",
   },
+  {
+    href: "/dashboard/deals",
+    label: "Deals",
+  },
+  {
+    href: "/dashboard/spreadsheets",
+    label: "Spreadsheets",
+  },
 ];
 
 
@@ -33,10 +41,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   
   const { status } = useSession();
-  if (status === "authenticated" && links.length === 2) {
-    links.push({ 'href': '/dashboard/deals', 'label': 'Deals' });
-    links.push({ 'href': '/dashboard/spreadsheets', 'label': 'Spreadsheets' });
-  }
   const cta: JSX.Element = (
     status == 'authenticated' ? 
     <ButtonAccount /> : 
