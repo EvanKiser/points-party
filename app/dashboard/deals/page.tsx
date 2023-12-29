@@ -21,7 +21,7 @@ export default async function Deals() {
             <DealCard destination="Lisbon" origin="Chicago" points={22500} cabinClass="Economy" carrierLogo="https://1000logos.net/wp-content/uploads/2019/12/TAP-Portugal-Logo.png" carrier="TAP" imageUrl="https://www.portugal.com/wp-content/uploads/2022/01/Lisbon-Skyline-small.jpg" />
             <DealCard destination="Sydney" origin="San Francisco" points={22500} cabinClass="Economy" carrierLogo="https://logos-world.net/wp-content/uploads/2023/01/Qantas-Logo.png" carrier="Qantas Airlines" imageUrl="https://i.natgeofe.com/n/bd48279e-be5a-4f28-9551-5cb917c6766e/GettyImages-103455489cropped.jpg" />
             <DealCard destination="Tokyo" origin="Miami" points={60000} cabinClass="Business" carrierLogo="https://s202.q4cdn.com/986123435/files/doc_downloads/logos/american-airlines/THUMB-aa_aa__ahz_4cp_grd_pos-(1).png" carrier="American Airlines" imageUrl="https://a.cdn-hotels.com/gdcs/production65/d826/d42a8ade-b32e-436a-a51d-a9c32630d4f8.jpg" />
-            <DealCard destination="Ibiza" origin="New York" points={37500} cabinClass="Premium Economy" carrierLogo="https://assets.stickpng.com/images/61586b0b258f1e000415490d.png" carrier="Delta" imageUrl="https://a.cdn-hotels.com/gdcs/production64/d142/a34f9d10-b69b-11e8-a095-0242ac11000d.jpg" />
+            <DealCard destination="Ibiza" origin="New York" points={37500} cabinClass="Premium Economy" carrierLogo="https://oconnorhardware.com/wp-content/uploads/2023/01/Delta-Logo.png" carrier="Delta" imageUrl="https://a.cdn-hotels.com/gdcs/production64/d142/a34f9d10-b69b-11e8-a095-0242ac11000d.jpg" />
           </div>
         </section>
       </main>
