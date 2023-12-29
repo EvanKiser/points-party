@@ -21,15 +21,15 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "Emails",
+    title: "Choose Airports",
     description:
       "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
     type: "video",
-    path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
+    path: "videos/DepartureAirports.mp4",
     format: "video/webm",
   },
   {
-    title: "Payments",
+    title: "Receive Notifications",
     description:
       "Create checkout sessions, handle webhooks to update user's account (subscriptions, one-time payments...) and tips to setup your account & reduce chargebacks",
     type: "image",
@@ -37,9 +37,12 @@ const features = [
     alt: "A computer",
   },
   {
-    title: "Authentication",
+    title: "Browse Award Travel Deals",
     description:
       "Magic links setup, login with Google walkthrough, save user in MongoDB/Supabase, private/protected pages & API calls",
+    type: "video",
+    path: "videos/deals.mp4",
+    format: "video/webm",
   },
   {
     title: "Spreadsheets",

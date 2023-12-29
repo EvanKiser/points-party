@@ -15,7 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
-        <HowItWorks />
+        <FeaturesAccordion />
         <Testimonials3 />
         <Pricing />
         <CTA />
