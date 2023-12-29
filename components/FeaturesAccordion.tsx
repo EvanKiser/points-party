@@ -48,6 +48,9 @@ const features = [
     title: "Spreadsheets",
     description:
       "If you would like to browse yourself, use our spreadsheets to track the cheapest travel per month per airline per cabin class for hundreds of routes.",
+    type: "video",
+    path: "videos/spreadsheets.mp4",
+    format: "video/webm",
   },
 ] as Feature[];
 
