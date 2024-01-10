@@ -4,7 +4,6 @@ interface DealCardProps {
     points: number;
     cabinClass: string;
     carrier: string;
-    imageUrl: string;
   }
   
   export const DealCard = ({
@@ -13,12 +12,12 @@ interface DealCardProps {
     points,
     cabinClass,
     carrier,
-    imageUrl,
   }: DealCardProps) => {
-    const carrierLogoPath = `/carrierLogos/${carrier}.png`;
+    const carrierLogoPath = `/carrierLogos/${carrier.toLowerCase()}.png`;
+    const destinationImagePath = `/destinationImages/${destination.toLowerCase()}.jpg`;
     return (
       <div className="w-72 border border-gray-300 rounded overflow-hidden bg-orange-50 relative" style={{ borderRadius: '5%' }}>
-        <div className="h-48 bg-cover bg-center relative" style={{ backgroundImage: `url(${imageUrl})` }}>
+        <div className="h-48 bg-cover bg-center relative" style={{ backgroundImage: `url(${destinationImagePath})` }}>
           <div className="absolute bottom-0 left-0 mb-2.5 ml-2.5 bg-white bg-opacity-85 px-2 py-1 rounded">{cabinClass}</div>
         </div>
         <div className="p-2.5">

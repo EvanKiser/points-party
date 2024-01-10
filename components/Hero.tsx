@@ -20,10 +20,10 @@ const Hero = () => {
         <TestimonialsAvatars priority={true} />
       </div>
       <div className="lg:w-full grid md:grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8">
-        <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrier="Air France" imageUrl="https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/03/25/12/eiffel.jpg" />
-        <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrier="Singapore Airlines" imageUrl="https://static.independent.co.uk/2023/06/02/12/iStock-1157937978.jpg" />
-        <DealCard destination="Dubai" origin="London" points={70000} cabinClass="First" carrier="Emirates" imageUrl="https://i0.wp.com/onedayitinerary.com/wp-content/uploads/2017/04/Dubai.jpg?resize=723%2C482" />
-        <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrier="United" imageUrl="https://www.nationsonline.org/gallery/Madagascar/Allee-des-Baobabs-Madagascar.jpg" />
+        <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrier="AirFrance" />
+        <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrier="Singapore" />
+        <DealCard destination="Dubai" origin="London" points={70000} cabinClass="First" carrier="Emirates" />
+        <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrier="United" />
       </div>
     </section>
   );
