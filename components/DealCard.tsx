@@ -3,7 +3,6 @@ interface DealCardProps {
     origin: string;
     points: number;
     cabinClass: string;
-    carrierLogo: string;
     carrier: string;
     imageUrl: string;
   }
@@ -13,10 +12,10 @@ interface DealCardProps {
     origin,
     points,
     cabinClass,
-    carrierLogo,
     carrier,
     imageUrl,
   }: DealCardProps) => {
+    const carrierLogoPath = `/carrierLogos/${carrier}.png`;
     return (
       <div className="w-72 border border-gray-300 rounded overflow-hidden bg-orange-50 relative" style={{ borderRadius: '5%' }}>
         <div className="h-48 bg-cover bg-center relative" style={{ backgroundImage: `url(${imageUrl})` }}>
@@ -24,7 +23,7 @@ interface DealCardProps {
         </div>
         <div className="p-2.5">
           <div className="bg-white rounded-lg px-4 py-2 flex justify-between items-center w-11/12 max-w-xs mx-auto mb-2">
-            <img src={carrierLogo} alt={carrier} className="h-8" />
+            <img src={carrierLogoPath} alt={carrier} className="h-8" />
             <div className="text-xl font-bold" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {points.toLocaleString()} Points
             </div>
