@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from "@/components/Header";
 import { DealCard } from "@/components/DealCard";
 
@@ -16,7 +16,7 @@ interface NewDealModalProps {
 interface DealFormData {
   origin: string;
   destination: string;
-  points: number;
+  cost_in_points: number;
   cabinClass: string;
   carrier: string;
 }
@@ -26,7 +26,7 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
   const [formData, setFormData] = useState<DealFormData>({
     origin: '',
     destination: '',
-    points: 0,
+    cost_in_points: 0,
     cabinClass: '',
     carrier: '',
   });
@@ -35,6 +35,7 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
   // Form submission handler
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(formData)
     onSubmit(formData);
     onClose(); // Close the modal after submission
   };
@@ -58,7 +59,7 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
             {/* Form fields */}
             <input name="origin" value={formData.origin} onChange={handleChange} placeholder="Origin" className="block w-full px-4 py-2 mt-2 border rounded-md" />
             <input name="destination" value={formData.destination} onChange={handleChange} placeholder="Destination" className="block w-full px-4 py-2 mt-2 border rounded-md" />
-            <input name="points" type="number" value={formData.points} onChange={handleChange} placeholder="Points" className="block w-full px-4 py-2 mt-2 border rounded-md" />
+            <input name="cost_in_points" type="number" value={formData.cost_in_points} onChange={handleChange} placeholder="Cost In Points" className="block w-full px-4 py-2 mt-2 border rounded-md" />
             <input name="cabinClass" value={formData.cabinClass} onChange={handleChange} placeholder="Cabin Class" className="block w-full px-4 py-2 mt-2 border rounded-md" />
             <input name="carrier" value={formData.carrier} onChange={handleChange} placeholder="Carrier" className="block w-full px-4 py-2 mt-2 border rounded-md" />
             <button type="button" onClick={handleTest} className="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
@@ -68,19 +69,19 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
               Submit
             </button>
           </form>
-          <button onClick={onClose} className="mt-3 text-sm underline">
-            Cancel
-          </button>
           {/* DealCard Test Preview */}
           {showTestCard && (
             <DealCard
               destination={formData.destination}
               origin={formData.origin}
-              points={formData.points}
+              points={formData.cost_in_points}
               cabinClass={formData.cabinClass}
               carrier={formData.carrier}
             />
           )}
+          <button onClick={onClose} className="mt-3 text-sm underline">
+            Cancel
+          </button>
         </div>
       </div>
     </div>
@@ -90,11 +91,34 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
 const Deals: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
-  const handleNewDealSubmit = (newDealData: DealFormData) => {
-    // Handle the new deal data here
-    // You may want to add this to your state or send it to your server
-    console.log(newDealData);
-  };
+  const handleNewDealSubmit = async (newDealData: DealFormData) => {
+      try {
+        const response = await fetch('/api/deals', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newDealData),
+        });
+        console.log(response)
+        if (response.status === 400) {
+          alert('Error: Could not save new deal. Be sure to fill out all fields.');
+          return;
+        }
+
+        if (response.status === 200 || response.status === 201) {
+          alert('New deal saved successfully!');
+          // Handle any other success operations here if necessary
+          return;
+        }
+
+        // If we get here, it's neither a 200 nor a 400, so handle accordingly
+        alert('An unexpected error occurred.');
+      } catch (error) {
+        console.error('Error saving new deal:', error);
+        alert('Error: Could not connect to the server.');
+      }
+    };
 
   return (
     <>
