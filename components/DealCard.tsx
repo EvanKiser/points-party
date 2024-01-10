@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface DealCardProps {
     destination: string;
     origin: string;
@@ -22,7 +23,7 @@ interface DealCardProps {
         </div>
         <div className="p-2.5">
           <div className="bg-white rounded-lg px-4 py-2 flex justify-between items-center w-11/12 max-w-xs mx-auto mb-2">
-            <img src={carrierLogoPath} alt={carrier} className="h-8" />
+            <Image src={carrierLogoPath} alt={carrier} className="h-8" />
             <div className="text-xl font-bold" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {points.toLocaleString()} Points
             </div>

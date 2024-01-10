@@ -8,6 +8,7 @@ import { DealCard } from "@/components/DealCard";
 interface NewDealModalProps {
   isOpen: boolean;
   onClose: () => void;
+  // eslint-disable-next-line no-unused-vars
   onSubmit: (formData: DealFormData) => void;
 }
 

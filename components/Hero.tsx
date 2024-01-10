@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import { DealCard } from "@/components/DealCard";
 import config from "@/config";
