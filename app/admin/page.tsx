@@ -110,14 +110,14 @@ const Deals: React.FC = () => {
             Add New Deal
           </button>
           <div className="flex flex-wrap gap-8 justify-start">
-            <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrier="AirFrance" />
-            <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrier="Singapore" />
-            <DealCard destination="Dubai" origin="London" points={100000} cabinClass="First" carrier="Emirates" />
-            <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrier="United" />
-            <DealCard destination="Lisbon" origin="Chicago" points={22500} cabinClass="Economy" carrier="TAP" />
-            <DealCard destination="Sydney" origin="San Francisco" points={22500} cabinClass="Economy" carrier="Qantas" />
-            <DealCard destination="Tokyo" origin="Miami" points={60000} cabinClass="Business" carrier="American" />
-          <DealCard destination="Ibiza" origin="New York" points={37500} cabinClass="Premium Economy" carrier="Delta" />
+            <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrier="AirFrance" isAdmin={true} />
+            <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrier="Singapore" isAdmin={true} />
+            <DealCard destination="Dubai" origin="London" points={100000} cabinClass="First" carrier="Emirates" isAdmin={true} />
+            <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrier="United" isAdmin={true} />
+            <DealCard destination="Lisbon" origin="Chicago" points={22500} cabinClass="Economy" carrier="TAP" isAdmin={true} />
+            <DealCard destination="Sydney" origin="San Francisco" points={22500} cabinClass="Economy" carrier="Qantas" isAdmin={true} />
+            <DealCard destination="Tokyo" origin="Miami" points={60000} cabinClass="Business" carrier="American" isAdmin={true} />
+          <DealCard destination="Ibiza" origin="New York" points={37500} cabinClass="Premium Economy" carrier="Delta" isAdmin={true} />
           </div>
         </section>
       </main>
