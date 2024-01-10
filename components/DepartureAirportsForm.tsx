@@ -49,7 +49,6 @@ export const DepartureAirportsForm = () => {
             const data = await response.json();
 
             setDepartureAirports(data.departureAirports);
-            console.log(data.departureAirports)
         } catch (error) {
             console.error('Error fetching airports:', error);
             // Handle the error state as appropriate
@@ -63,7 +62,6 @@ export const DepartureAirportsForm = () => {
                 throw new Error('Failed to fetch airports');
             }
             const data = await response.json();
-            console.log(data)
             setHasAccess(data.hasAccess);
         } catch (error) {
             console.error('Error fetching access:', error);
@@ -80,7 +78,6 @@ export const DepartureAirportsForm = () => {
             },
             body: JSON.stringify(departureAirports),
           });
-          console.log(response)
           if (response.status === 400) {
             setBanner({ type: 'error', message: 'Error: Could not save selections. Be sure to select at least one airport.' });
             return;

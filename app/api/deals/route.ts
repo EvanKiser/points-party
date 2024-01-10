@@ -22,9 +22,7 @@ export async function POST(req: NextRequest) {
       deal_end_date: deal_end_date || undefined // Use provided value or leave undefined to use default
     });
 
-    console.log("no saved")
     newDeal.save();
-    console.log("saved")
 
     return NextResponse.json({"message": "Deal created" }, { status: 201 })
   } catch (error) {

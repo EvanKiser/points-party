@@ -14,7 +14,6 @@ const UserProfile = () => {
         email: "new@gmail.com",
       });
 
-      console.log(data);
     } catch (e) {
       console.error(e?.message);
     } finally {

@@ -35,7 +35,6 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
   // Form submission handler
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData)
     onSubmit(formData);
     onClose(); // Close the modal after submission
   };
@@ -100,7 +99,6 @@ const Deals: React.FC = () => {
           },
           body: JSON.stringify(newDealData),
         });
-        console.log(response)
         if (response.status === 400) {
           alert('Error: Could not save new deal. Be sure to fill out all fields.');
           return;
