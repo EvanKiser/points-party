@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Header from "@/components/Header";
 import { DealCard } from "@/components/DealCard";
 
@@ -7,6 +10,27 @@ export const dynamic = "force-dynamic";
 // It's a server compoment which means you can fetch data (like the user profile) before the page is rendered.
 // See https://shipfa.st/docs/tutorials/private-page
 export default async function Deals() {
+  const [deals, setDeals] = useState([]);
+
+  useEffect(() => {
+    // Call getDeals when the component mounts
+    getDeals();
+  }, []); // The empty array ensures this effect only runs once after the initial render
+
+  const getDeals = async () => {
+    try {
+        const response = await fetch('/api/deals');
+        if (!response.ok) {
+            throw new Error('Failed to fetch deals');
+        }
+        const data = await response.json();
+
+        setDeals(data.deals);
+    } catch (error) {
+        console.error('Error fetching airports:', error);
+        // Handle the error state as appropriate
+    }
+  };
   return (
     <>
       <Header />
@@ -14,14 +38,9 @@ export default async function Deals() {
         <section className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-8">Deals</h2>
         <div className="flex flex-wrap gap-8 justify-start">
-            <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrier="AirFrance" />
-            <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrier="Singapore" />
-            <DealCard destination="Dubai" origin="London" points={100000} cabinClass="First" carrier="Emirates" />
-            <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrier="United" />
-            <DealCard destination="Lisbon" origin="Chicago" points={22500} cabinClass="Economy" carrier="TAP" />
-            <DealCard destination="Sydney" origin="San Francisco" points={22500} cabinClass="Economy" carrier="Qantas" />
-            <DealCard destination="Tokyo" origin="Miami" points={60000} cabinClass="Business" carrier="American" />
-            <DealCard destination="Ibiza" origin="New York" points={37500} cabinClass="Premium Economy" carrier="Delta" />
+          {deals.map(deal => (
+              <DealCard origin={deal.origin} destination={deal.destination} points={deal.cost_in_points} cabinClass={deal.cabinClass} carrier={deal.carrier} isAdmin={true} />
+          ))}
           </div>
         </section>
       </main>

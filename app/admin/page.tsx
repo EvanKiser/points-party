@@ -88,7 +88,28 @@ const NewDealModal: React.FC<NewDealModalProps> = ({ isOpen, onClose, onSubmit }
 }
 
 const Deals: React.FC = () => {
+  const [deals, setDeals] = useState([]);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+      // Call getDeals when the component mounts
+      getDeals();
+  }, []); // The empty array ensures this effect only runs once after the initial render
+
+  const getDeals = async () => {
+    try {
+        const response = await fetch('/api/deals');
+        if (!response.ok) {
+            throw new Error('Failed to fetch deals');
+        }
+        const data = await response.json();
+
+        setDeals(data.deals);
+    } catch (error) {
+        console.error('Error fetching airports:', error);
+        // Handle the error state as appropriate
+    }
+};
 
   const handleNewDealSubmit = async (newDealData: DealFormData) => {
       try {
@@ -132,14 +153,9 @@ const Deals: React.FC = () => {
             Add New Deal
           </button>
           <div className="flex flex-wrap gap-8 justify-start">
-            <DealCard destination="Paris" origin="Dallas" points={15000} cabinClass="Economy" carrier="AirFrance" isAdmin={true} />
-            <DealCard destination="Bali" origin="Los Angeles" points={10000} cabinClass="Economy" carrier="Singapore" isAdmin={true} />
-            <DealCard destination="Dubai" origin="London" points={100000} cabinClass="First" carrier="Emirates" isAdmin={true} />
-            <DealCard destination="Madagascar" origin="New York" points={37500} cabinClass="Premium Economy" carrier="United" isAdmin={true} />
-            <DealCard destination="Lisbon" origin="Chicago" points={22500} cabinClass="Economy" carrier="TAP" isAdmin={true} />
-            <DealCard destination="Sydney" origin="San Francisco" points={22500} cabinClass="Economy" carrier="Qantas" isAdmin={true} />
-            <DealCard destination="Tokyo" origin="Miami" points={60000} cabinClass="Business" carrier="American" isAdmin={true} />
-          <DealCard destination="Ibiza" origin="New York" points={37500} cabinClass="Premium Economy" carrier="Delta" isAdmin={true} />
+            {deals.map(deal => (
+              <DealCard origin={deal.origin} destination={deal.destination} points={deal.cost_in_points} cabinClass={deal.cabinClass} carrier={deal.carrier} isAdmin={true} />
+            ))}
           </div>
         </section>
       </main>
