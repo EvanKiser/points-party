@@ -39,7 +39,7 @@ export default async function Deals() {
         <h2 className="text-4xl font-bold text-center mb-8">Deals</h2>
         <div className="flex flex-wrap gap-8 justify-start">
           {deals.map(deal => (
-              <DealCard origin={deal.origin} destination={deal.destination} points={deal.cost_in_points} cabinClass={deal.cabinClass} carrier={deal.carrier} isAdmin={true} />
+              <DealCard key={deal._id} origin={deal.origin} destination={deal.destination} points={deal.cost_in_points} cabinClass={deal.cabinClass} carrier={deal.carrier} isAdmin={true} />
           ))}
           </div>
         </section>

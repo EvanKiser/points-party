@@ -154,7 +154,7 @@ const Deals: React.FC = () => {
           </button>
           <div className="flex flex-wrap gap-8 justify-start">
             {deals.map(deal => (
-              <DealCard origin={deal.origin} destination={deal.destination} points={deal.cost_in_points} cabinClass={deal.cabinClass} carrier={deal.carrier} isAdmin={true} />
+              <DealCard key={deal._id} origin={deal.origin} destination={deal.destination} points={deal.cost_in_points} cabinClass={deal.cabinClass} carrier={deal.carrier} isAdmin={true} />
             ))}
           </div>
         </section>
