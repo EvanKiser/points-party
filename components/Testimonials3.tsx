@@ -17,7 +17,7 @@ const list: {
     // REQUIRED
     text: "Points Party has been a game-changer for my travel. I used to just let my AMEX points pile up but now I use them to travel the world. I flew business to Tokyo last month, thanks to a deal sent by Points Party. A must for any travel enthusiast!",
     // Optional, a statically imported image (usually from your public folder—recommended) or a link to the person's avatar. Shows a fallback letter if not provided
-    img: "https://pbs.twimg.com/profile_images/1651932860796862466/gFVKdvX4_400x400.jpg",
+    img: "https://pbs.twimg.com/profile_images/1752132212903079936/MuFliSlM_400x400.jpg",
   },
   {
     username: "",

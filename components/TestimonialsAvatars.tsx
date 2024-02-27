@@ -7,7 +7,7 @@ const avatars: {
   {
     alt: "User",
     // Ideally, load from a statically generated image for better SEO performance (import userImage from "@/public/userImage.png")
-    src: "https://pbs.twimg.com/profile_images/1651932860796862466/gFVKdvX4_400x400.jpg",
+    src: "https://pbs.twimg.com/profile_images/1752132212903079936/MuFliSlM_400x400.jpg",
   },
   {
     alt: "User",
