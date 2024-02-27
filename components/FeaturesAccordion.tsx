@@ -23,7 +23,7 @@ const features = [
   {
     title: "Choose Airports",
     description:
-      "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
+      "Choose up to 3 departure airports you would like to be notified of the best deals from.",
     type: "video",
     path: "videos/DepartureAirports.mp4",
     format: "video/webm",
@@ -31,15 +31,15 @@ const features = [
   {
     title: "Receive Notifications",
     description:
-      "Create checkout sessions, handle webhooks to update user's account (subscriptions, one-time payments...) and tips to setup your account & reduce chargebacks",
-    type: "image",
-    path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
-    alt: "A computer",
+      "We use software to search day and night to find you the best deals. When we find a deal from one of your airports, we send you an email!",
+    // type: "image",
+    // path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    // alt: "A computer",
   },
   {
     title: "Browse Award Travel Deals",
     description:
-      "Magic links setup, login with Google walkthrough, save user in MongoDB/Supabase, private/protected pages & API calls",
+      "Browse all active deals across all airports!",
     type: "video",
     path: "videos/deals.mp4",
     format: "video/webm",
@@ -184,9 +184,9 @@ const FeaturesAccordion = () => {
           There&apos;s a better way
         </p>
         <h2 className="font-extrabold text-4xl lg:text-6xl tracking-tight mb-12 md:mb-24">
-          All you need to ship your startup in days,
+          Sit back relax and let Points Party
           <span className="bg-neutral text-neutral-content px-2 md:px-4 ml-1 md:ml-1.5 leading-relaxed whitespace-nowrap">
-            not months
+          do the searching for you
           </span>
         </h2>
         <div className=" flex flex-col md:flex-row gap-12 md:gap-24">
