@@ -9,28 +9,29 @@ export const dynamic = "force-dynamic";
 // This is a private page: It's protected by the layout.js component which ensures the user is authenticated.
 // It's a server compoment which means you can fetch data (like the user profile) before the page is rendered.
 // See https://shipfa.st/docs/tutorials/private-page
-export default async function Deals() {
+export default function Deals() {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    // Call getDeals when the component mounts
-    getDeals();
-  }, []); // The empty array ensures this effect only runs once after the initial render
-
-  const getDeals = async () => {
-    try {
+    // Wrap the asynchronous logic in a function inside the effect
+    const fetchDeals = async () => {
+      try {
         const response = await fetch('/api/deals');
         if (!response.ok) {
-            throw new Error('Failed to fetch deals');
+          throw new Error('Failed to fetch deals');
         }
         const data = await response.json();
-
         setDeals(data.deals);
-    } catch (error) {
+      } catch (error) {
         console.error('Error fetching airports:', error);
         // Handle the error state as appropriate
-    }
-  };
+      }
+    };
+
+    // Call the function
+    fetchDeals();
+  }, []);
+
   return (
     <>
       <Header />
