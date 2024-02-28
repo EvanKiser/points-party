@@ -25,7 +25,7 @@ interface DealCardProps {
       setSendCount(sendCount + 1);
     };
     
-    const carrierLogoPath = `/carrierLogos/${carrier.toLowerCase()}.png`;
+    const carrierLogoPath = `/carrierLogos/${carrier}.png`;
     const destinationImagePath = `/destinationImages/${destination.toLowerCase()}.jpg`;
 
     return (
