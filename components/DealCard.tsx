@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from "next/image";
 interface DealCardProps {
     destination: string;
     origin: string;
@@ -26,7 +25,7 @@ interface DealCardProps {
       setSendCount(sendCount + 1);
     };
     
-    const carrierLogoPath = `/carrierLogos/airfrance.png`;
+    const carrierLogoPath = `/carrierLogos/${carrier.toLowerCase()}.png`;
     const destinationImagePath = `/destinationImages/${destination.toLowerCase()}.jpg`;
 
     return (
@@ -36,7 +35,7 @@ interface DealCardProps {
         </div>
         <div className="p-2.5">
           <div className="bg-white rounded-lg px-4 py-2 flex justify-between items-center w-11/12 max-w-xs mx-auto mb-2">
-            <Image src={carrierLogoPath} alt={carrier} className="h-8" width={50} height={50} />
+            <img src={carrierLogoPath} alt={carrier} className="h-8" width={50} height={50} />
             <div className="text-xl font-bold" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {points.toLocaleString()} Points
             </div>
