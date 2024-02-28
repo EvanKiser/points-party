@@ -26,7 +26,7 @@ interface DealCardProps {
       setSendCount(sendCount + 1);
     };
     
-    const carrierLogoPath = `/carrierLogos/${carrier.toLowerCase()}.PNG`;
+    const carrierLogoPath = `/carrierLogos/airfrance.png`;
     const destinationImagePath = `/destinationImages/${destination.toLowerCase()}.jpg`;
 
     return (
